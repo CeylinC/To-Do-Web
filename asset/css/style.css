@@ -1,0 +1,16 @@
+body{
+    background-color: #f8f8f8;
+    font-family: 'Quicksand', sans-serif;
+}
+#sidebar{
+    z-index: 100;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+h1{
+    text-align: end;
+}
+#todo{
+    margin: 0 auto;
+}
