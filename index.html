@@ -7,6 +7,8 @@
     <title>To-Do</title>
     <script src="https://kit.fontawesome.com/70d415455e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="asset/css/components/sidebar.css">
+    <link rel="stylesheet" href="asset/css/components/list-item.css">
+    <link rel="stylesheet" href="asset/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
@@ -24,7 +26,47 @@
             <li class="sidebar-item"><i class="fa-solid fa-circle-xmark"></i>Undone</li>
         </ul>
     </div>
+
+    <div id="todo">
+        <ul id="todo-list">
+            <li class="todo-item">
+                <input type="checkbox">
+                <i class="fa-solid fa-star checkbox-icon"></i>
+                <div class="todo-text">Yapılacak görev görevsizlik</div>
+                <div class="todo-date">Jul 18 23</div>
+                <div class="todo-menu-button"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                <ul class="todo-menu">
+                    <li class="todo-menu-item cancel-button"><i class="fa-solid fa-trash-can"></i>Delete</li>
+                    <li class="todo-menu-item update-button"><i class="fa-solid fa-pen"></i>Edit</li>
+                </ul>
+            </li>
+            <li class="todo-item">
+                <input type="checkbox">
+                <i class="fa-solid fa-star checkbox-icon"></i>
+                <div class="todo-text">Yapılacak görev görevsizlik</div>
+                <div class="todo-date">Jul 18 23</div>
+                <div class="todo-menu-button"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                <ul class="todo-menu">
+                    <li class="todo-menu-item cancel-button"><i class="fa-solid fa-trash-can"></i>Delete</li>
+                    <li class="todo-menu-item update-button"><i class="fa-solid fa-pen"></i>Edit</li>
+                </ul>
+            </li>
+            <li class="todo-item">
+                <input type="checkbox">
+                <i class="fa-solid fa-star checkbox-icon"></i>
+                <div class="todo-text">Yapılacak görev görevsizlik</div>
+                <div class="todo-date">Jul 18 23</div>
+                <div class="todo-menu-button"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                <ul class="todo-menu">
+                    <li class="todo-menu-item cancel-button"><i class="fa-solid fa-trash-can"></i>Delete</li>
+                    <li class="todo-menu-item update-button"><i class="fa-solid fa-pen"></i>Edit</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
     <script src="asset/js/components/sidebar.js"></script>
+    <script src="asset/js/components/list-item.js"></script>
 
 
 </html>
