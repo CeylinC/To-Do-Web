@@ -1,5 +1,7 @@
 const sidebar = document.getElementById("sidebar");
 const hamburgerMenu = document.getElementById("sidebar-hamburger");
+let items = document.querySelectorAll(".sidebar-item");
+let selectedItem = items[1]; // Select "All" type
 
 selectDisplayType();
 
@@ -10,8 +12,6 @@ hamburgerMenu.onclick = function () {
 }
 
 function selectDisplayType() {
-    let items = document.querySelectorAll(".sidebar-item");
-    let selectedItem = items[1]; // Select "All" type
     items.forEach(item => {
         if(item.id == ""){
             item.addEventListener("click", function () {

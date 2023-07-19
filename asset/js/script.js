@@ -43,6 +43,7 @@ function updateTodo(id, mission){
 
 function completeTodo(id, isComplete){
     todos.find(todo => todo.id == id).isComplete = isComplete;
+    filterTodoList(selectedItem.textContent);
 }
 
 function createTodo(mission){

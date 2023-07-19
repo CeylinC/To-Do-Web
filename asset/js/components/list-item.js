@@ -10,7 +10,7 @@ function addEvent() {
     menuButtons.forEach((menuButton) => menuButton.addEventListener("click", () => {
         menuButton.nextElementSibling.classList.toggle("open");
     }, true));
-    checkboxs.forEach((checkbox) => checkbox.addEventListener("change", function(){
+    checkboxs.forEach((checkbox) => checkbox.addEventListener("change", function () {
         completeTodo(checkbox.parentElement.id, checkbox.checked);
     }));
 }
@@ -29,7 +29,7 @@ window.onclick = function (event) {
                 let todoText = menuButton.previousElementSibling.previousElementSibling.textContent;
                 menuButton.previousElementSibling.previousElementSibling.innerHTML = '<input type="text"><div class="save-button">Save</div>'; //.todo-text
                 menuButton.previousElementSibling.previousElementSibling.firstChild.value = todoText; //.todo-text input
-                menuButton.previousElementSibling.previousElementSibling.lastChild.addEventListener("click", function(){
+                menuButton.previousElementSibling.previousElementSibling.lastChild.addEventListener("click", function () {
                     todoText = menuButton.previousElementSibling.previousElementSibling.firstChild.value; //.todo-text input
                     menuButton.previousElementSibling.previousElementSibling.innerHTML = todoText; //.todo-text
                     updateTodo(menuButton.parentElement.id, todoText);
