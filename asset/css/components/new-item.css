@@ -1,0 +1,29 @@
+#add-todo-item{
+    background-color: var(--buttonTextColor);
+    width: calc(90vw - 20px);
+    margin: 0 auto;
+    padding: 10px 0px 10px 20px;
+    border-radius: 100px;
+}
+#add-todo-item input{
+    outline: none;
+    border: none;
+    background-color: var(--buttonTextColor);
+    color: var(--mainColor);
+    font-size: 20px;
+    width: calc(100% - 52px);
+    transform: translateY(10%);
+}
+#add-todo-item .save-button{
+    color: white;
+    background-color: var(--mainColor);
+    font-size: 20px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#add-todo-item .save-button i{
+    transform: translate(40%, 15%);
+}

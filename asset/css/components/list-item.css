@@ -7,9 +7,6 @@
     }
 }
 #todo{
-    --mainColor: #6528F7;
-    --hoverMenuItemColor: #EDE4FF;
-    --buttonColor: #A076F9;
     --dateSize: 100px;
     --menuHeight: 60px;
 
@@ -79,7 +76,7 @@
     background-color: var(--mainColor);
     padding: 5px 10px;
     border-radius: 5px;
-    color: var(--hoverMenuItemColor);
+    color: var(--buttonTextColor);
     margin-left: 10px;
     user-select: none;
     cursor: pointer;
@@ -89,10 +86,11 @@
     margin: 0 10px;
     font-weight: lighter;
     color: grey;
+    text-align: center;
 }
 #todo #todo-list .todo-item .todo-menu-button{
     font-size: 24px;
-    color: var(--buttonColor);
+    color: var(--menuButtonColor);
     cursor: pointer;
 }
 #todo #todo-list .todo-item .todo-menu{
@@ -103,7 +101,7 @@
     margin: 0;
     padding: 0;
     height: 0;
-    border: 0px solid var(--hoverMenuItemColor);
+    border: 0px solid var(--buttonTextColor);
     border-radius: 4px;
     right: -65px;
     top: 30px;
@@ -111,7 +109,7 @@
     transition: height 0.1s ease-in-out, border 0.15s ease-in-out, padding 0.15s ease-in-out;
 }
 #todo #todo-list .todo-item .todo-menu.open{
-    border: 1px solid var(--hoverMenuItemColor);
+    border: 1px solid var(--buttonTextColor);
     padding: 5px 0;
     height: var(--menuHeight);
 }
@@ -122,7 +120,7 @@
 }
 #todo #todo-list .todo-item .todo-menu .todo-menu-item:hover{
     background-color: var(--mainColor);
-    color: var(--hoverMenuItemColor);
+    color: var(--buttonTextColor);
 }
 #todo #todo-list .todo-item .todo-menu .todo-menu-item i{
     margin-right: 10px;
