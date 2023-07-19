@@ -1,6 +1,14 @@
 body{
+    --mainColor: #6528F7;
+    --navbarItemColor: #471cac;
+    --buttonTextColor: #EDE4FF;
+    --menuButtonColor: #A076F9;
+    --hamburgerColor: #D7BBF5;
+
     background-color: #f8f8f8;
+
     font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
 }
 #sidebar{
     z-index: 100;
@@ -8,8 +16,19 @@ body{
     top: 10px;
     left: 10px;
 }
+.line{
+    width: 90vw;
+    height: 1px;
+    background-color: #ececee;
+    margin: 32px auto;
+}
 h1{
     text-align: end;
+    width: 90vw;
+    margin: 30px auto;
+    font-weight: bold;
+    color: var(--mainColor);
+    font-size: 40px;
 }
 #todo{
     margin: 0 auto;
