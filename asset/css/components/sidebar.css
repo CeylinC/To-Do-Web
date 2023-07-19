@@ -1,0 +1,68 @@
+#sidebar{
+    --mainColor: #6528F7;
+    --itemColor: #471cac;
+    --selectItemColor: #EDE4FF;
+    --hamburgerColor: #D7BBF5;
+    --height: 350px;
+    --width: 64px;
+
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+    width: var(--width);
+    height: var(--width);
+    color: var(--itemColor);
+    overflow: hidden;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+    font-weight: bold;
+}
+
+#sidebar.open{
+    height: var(--height);
+    border-radius: 0;
+}
+
+#sidebar .sidebar-list{
+    list-style-type: none;
+    background-color: var(--mainColor);
+    border-radius: var(--width);
+    padding: 0;
+    margin: 0;
+    height: var(--height);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    user-select: none;
+}
+
+#sidebar .sidebar-list .sidebar-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+#sidebar .sidebar-list .sidebar-item.selected{
+    color: var(--selectItemColor);
+}
+
+#sidebar .sidebar-list i{
+    font-size: 32px;
+}
+
+#sidebar .sidebar-list span{
+    font-size: 40px;
+}
+
+#sidebar .sidebar-list .sidebar-item > :first-child{
+    margin-bottom: 5px;
+}
+
+#sidebar .sidebar-list .sidebar-item:last-child{
+    padding-bottom: 10px;
+}
+
+#sidebar .sidebar-list #sidebar-hamburger{
+    color: var(--hamburgerColor);
+}
