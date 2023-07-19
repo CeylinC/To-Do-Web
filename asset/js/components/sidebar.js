@@ -18,6 +18,7 @@ function selectDisplayType() {
                 selectedItem.classList.remove("selected");
                 item.classList.add("selected");
                 selectedItem = item;
+                filterTodoList(selectedItem.textContent)
             });
         }
     });
