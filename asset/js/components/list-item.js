@@ -12,6 +12,9 @@ function addEvent() {
     }, true));
     checkboxs.forEach((checkbox) => checkbox.addEventListener("change", function () {
         completeTodo(checkbox.parentElement.id, checkbox.checked);
+        if(selectedItem.textContent == "Done" || selectedItem.textContent == "Undone"){
+            checkbox.parentElement.style.display = "none";
+        }
     }));
 }
 
