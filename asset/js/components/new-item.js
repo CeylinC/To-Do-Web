@@ -5,7 +5,8 @@ function createNewItem(mission){
     let today = new Date();
     let todo = document.createElement("div");
     todo.className = "todo-item";
-    todo.id = todos[todos.length - 1].id + 1;
+    todo.id = localStorage.length == 0 ? 1 : findLastKey() + 1;
+    
     todo.innerHTML = `
     <input type="checkbox">
     <i class="fa-solid fa-star checkbox-icon"></i>
@@ -25,4 +26,14 @@ function createNewItem(mission){
 
 saveButton.onclick = function(){
     createTodo(saveButton.previousElementSibling.value);
+}
+
+function findLastKey(){
+    let max = 0;
+    for(let i = 0; i < localStorage.length; i++){
+        if(parseInt(localStorage.key(i)) > max){
+            max = parseInt(localStorage.key(i));
+        }
+    }
+    return max;
 }
