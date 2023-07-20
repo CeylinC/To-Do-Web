@@ -14,6 +14,10 @@
     width: calc(100% - 52px);
     transform: translateY(10%);
 }
+#add-todo-item input::placeholder{
+    color: var(--mainColor);
+    opacity: 0.5;
+}
 #add-todo-item .save-button{
     color: white;
     background-color: var(--mainColor);

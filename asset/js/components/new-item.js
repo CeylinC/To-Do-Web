@@ -1,12 +1,12 @@
 let saveButton = document.querySelector(".save-button");
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-function createNewItem(mission){
+function createNewItem(mission) {
     let today = new Date();
     let todo = document.createElement("div");
     todo.className = "todo-item";
     todo.id = localStorage.length == 0 ? 1 : findLastKey() + 1;
-    
+
     todo.innerHTML = `
     <input type="checkbox">
     <i class="fa-solid fa-star checkbox-icon"></i>
@@ -24,14 +24,17 @@ function createNewItem(mission){
     return todo;
 }
 
-saveButton.onclick = function(){
-    createTodo(saveButton.previousElementSibling.value);
+saveButton.onclick = function () {
+    if (saveButton.previousElementSibling.value != "") {
+        createTodo(saveButton.previousElementSibling.value);
+        saveButton.previousElementSibling.value = "";
+    }
 }
 
-function findLastKey(){
+function findLastKey() {
     let max = 0;
-    for(let i = 0; i < localStorage.length; i++){
-        if(parseInt(localStorage.key(i)) > max){
+    for (let i = 0; i < localStorage.length; i++) {
+        if (parseInt(localStorage.key(i)) > max) {
             max = parseInt(localStorage.key(i));
         }
     }

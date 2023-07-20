@@ -3,31 +3,36 @@
  */
 const todoList = document.getElementById("todo-list");
 
-function deleteToDo(id){
+function deleteToDo(id) {
     localStorage.removeItem(id);
 }
 
-function updateTodo(id, mission){
+function updateTodo(id, mission) {
     let todoObject = JSON.parse(localStorage.getItem(id));
     todoObject.mission = mission;
     localStorage.setItem(id, JSON.stringify(todoObject));
 }
 
-function completeTodo(id, isComplete){
+function completeTodo(id, isComplete) {
     let todoObject = JSON.parse(localStorage.getItem(id));
     todoObject.isComplete = isComplete;
     localStorage.setItem(id, JSON.stringify(todoObject));
 }
 
-function createTodo(mission){
+function createTodo(mission) {
     let todo = createNewItem(mission);
-    localStorage.setItem(parseInt(todo.id),JSON.stringify({id: parseInt(todo.id), mission: mission, isComplete: false, date: todo.children[3].textContent}));
+    localStorage.setItem(parseInt(todo.id), JSON.stringify({ id: parseInt(todo.id), mission: mission, isComplete: false, date: todo.children[3].textContent }));
     findListItem();
 }
 
 function addTodoList() {
-    for(let i=0; i < localStorage.length; i++){
-        let todo =JSON.parse(localStorage.getItem(localStorage.key(i)));
+    let todoArray = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        let todo = JSON.parse(localStorage.getItem(localStorage.key(i)));
+        todoArray.push(todo);
+    }
+    todoArray.sort((a, b) => { return a.id - b.id; });
+    todoArray.forEach((todo) => {
         let todoItem = `
         <li class="todo-item" id="${todo.id}">
             <input type="checkbox" ${todo.isComplete ? "checked" : ""}>
@@ -42,19 +47,19 @@ function addTodoList() {
         </li>
         `;
         todoList.insertAdjacentHTML("afterbegin", todoItem);
-    }
+    });
     findListItem();
     addEvent();
 }
 
-function filterTodoList(filterType){
-    if(filterType == "flakyAll"){
+function filterTodoList(filterType) {
+    if (filterType == "flakyAll") {
         Array.from(todoList.children).forEach(todo => todo.style.display = "flex");
     }
-    else if (filterType == "Done"){
+    else if (filterType == "Done") {
         Array.from(todoList.children).forEach(todo => todo.children[0].checked ? todo.style.display = "flex" : todo.style.display = "none");
     }
-    else if (filterType == "Undone"){
+    else if (filterType == "Undone") {
         Array.from(todoList.children).forEach(todo => todo.children[0].checked ? todo.style.display = "none" : todo.style.display = "flex");
     }
 }
