@@ -19,7 +19,11 @@ function createNewItem(mission) {
     </ul>
     `;
     todo.children[4].addEventListener("click", () => todo.children[5].classList.toggle("open"), true);
-    todo.children[0].addEventListener("change", () => completeTodo(todo.id, todo.children[0].checked));
+    todo.children[0].addEventListener("change", () => {
+        completeTodo(todo.id, todo.children[0].checked); if (selectedItem.textContent == "Done" || selectedItem.textContent == "Undone") {
+            todo.style.display = "none";
+        }
+    });
     todoList.insertAdjacentElement("afterbegin", todo);
     return todo;
 }
