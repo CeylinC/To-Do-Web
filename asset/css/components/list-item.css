@@ -103,8 +103,8 @@
     height: 0;
     border: 0px solid var(--buttonTextColor);
     border-radius: 4px;
-    right: -65px;
-    top: 30px;
+    right: 40px;
+    top: 40px;
     overflow: hidden;
     transition: height 0.1s ease-in-out, border 0.15s ease-in-out, padding 0.15s ease-in-out;
 }
