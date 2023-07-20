@@ -126,3 +126,17 @@
     margin-right: 10px;
     pointer-events: none;
 }
+@media screen and (max-width: 425px) {
+    #todo #todo-list .todo-item .todo-text{
+        width: calc(100% - 60px);
+        text-overflow: ellipsis;
+    }
+    #todo #todo-list .todo-item .todo-date {
+        position: absolute;
+        bottom: 1px;
+        font-size: 12px;
+        text-align: start;
+        left: 50px;
+        opacity: 0.5;
+    }
+}
