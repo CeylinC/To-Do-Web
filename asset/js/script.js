@@ -1,60 +1,34 @@
+/**
+ * () Menu konumunu düzelt
+ */
 const todoList = document.getElementById("todo-list");
 
-var todos = [
-    {
-        id: 1,
-        mission: "Ödevlerini yap",
-        isComplete: false,
-        date: "12 Dec 2021"
-    },
-    {
-        id: 2,
-        mission: "Ödevlerini yap",
-        isComplete: false,
-        date: "12 Dec 2021"
-    },
-    {
-        id: 3,
-        mission: "Ödevlerini yap",
-        isComplete: true,
-        date: "27/10/2023"
-    },
-    {
-        id: 4,
-        mission: "Ödevlerini yap",
-        isComplete: true,
-        date: "27/10/2023"
-    },
-    {
-        id : 5,
-        mission: "Ödevlerini yap",
-        isComplete: false,
-        date: "27/10/2023"
-    }
-];
-
 function deleteToDo(id){
-    todos = todos.filter(todo => todo.id != id);
+    localStorage.removeItem(id);
 }
 
 function updateTodo(id, mission){
-    todos.find(todo => todo.id == id).mission = mission;
+    let todoObject = JSON.parse(localStorage.getItem(id));
+    todoObject.mission = mission;
+    localStorage.setItem(id, JSON.stringify(todoObject));
 }
 
 function completeTodo(id, isComplete){
-    todos.find(todo => todo.id == id).isComplete = isComplete;
-    filterTodoList(selectedItem.textContent);
+    let todoObject = JSON.parse(localStorage.getItem(id));
+    todoObject.isComplete = isComplete;
+    localStorage.setItem(id, JSON.stringify(todoObject));
 }
 
 function createTodo(mission){
     let todo = createNewItem(mission);
-    todos.push({id: parseInt(todo.id), mission: mission, isComplete: false, date: todo.children[3].textContent});
+    localStorage.setItem(parseInt(todo.id),JSON.stringify({id: parseInt(todo.id), mission: mission, isComplete: false, date: todo.children[3].textContent}));
     findListItem();
 }
 
 function addTodoList() {
-    todos.forEach(todo => {
-        let todoItem= `
+    for(let i=0; i < localStorage.length; i++){
+        let todo =JSON.parse(localStorage.getItem(localStorage.key(i)));
+        let todoItem = `
         <li class="todo-item" id="${todo.id}">
             <input type="checkbox" ${todo.isComplete ? "checked" : ""}>
             <i class="fa-solid fa-star checkbox-icon"></i>
@@ -68,7 +42,7 @@ function addTodoList() {
         </li>
         `;
         todoList.insertAdjacentHTML("afterbegin", todoItem);
-    });
+    }
     findListItem();
     addEvent();
 }
